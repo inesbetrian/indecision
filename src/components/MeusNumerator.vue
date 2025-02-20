@@ -5,7 +5,7 @@
       <h3>Square: {{ quadrataNumerus }}</h3>
   
       <div>
-        <button @:click="numerus++">+1</button>
+        <button class="btn btn-primary" @:click="numerus++">+1</button>
         <button @:click="numerus--">-1</button>
       </div>
     </section>
