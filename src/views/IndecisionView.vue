@@ -20,5 +20,6 @@
     import ChatNuntii from '@/components/chat/ChatNuntii.vue';
 
     import TextusArca from '@/components/chat/TextusArca.vue';
+    
 
 </script>
