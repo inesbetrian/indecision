@@ -4,12 +4,21 @@
 
         <div class="flex flex-col space-y-2">
           
-            <ChatBullula :meus-est="true" nuntius="¿Salimos luego a dar una vueta?" />
+            <!-- <ChatBullula :meus-est="true" nuntius="¿Salimos luego a dar una vueta?" /> -->
+
+            <!-- <ChatBullula 
+            v-for="nuntius in nuntii"
+            :key="nuntius.id"
+            :meus-est="nuntius.meusEst" 
+            :nuntius="nuntius.nuntius" 
+            :imago="nuntius.imago"
+            /> -->
 
             <ChatBullula 
-            :meus-est="false" 
-            nuntius="no" 
-            imago="https://yesno.wtf/assets/yes/8-2f93962e2ab24427df8589131da01a4d.gif"/>
+            v-for="nuntius in nuntii"
+            :key="nuntius.id"
+            v-bind="nuntius"
+            />
 
         </div>
 
@@ -19,6 +28,13 @@
 
 <script lang="ts" setup>
     
+import type { ChatNuntius } from '@/interfaces/chat-nuntius.interface';
 import ChatBullula from './ChatBullula.vue';
+
+interface Props {
+    nuntii: ChatNuntius[];
+}
+
+defineProps<Props>()
 
 </script>
